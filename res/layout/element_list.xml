@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="230dp"
+            android:layout_height="94dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="Evento"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#982317"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="228dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:gravity="left"
+                android:text="Tiempo"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#b1b1b1"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/labelNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="13dp"
+            android:text="Now"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#982317" />
+
+    </LinearLayout>
+
+</LinearLayout>
