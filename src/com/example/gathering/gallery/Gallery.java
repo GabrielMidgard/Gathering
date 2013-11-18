@@ -1,12 +1,5 @@
 package com.example.gathering.gallery;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.mime.MultipartEntity;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.entity.mime.content.StringBody;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -35,6 +28,9 @@ import com.example.gathering.R.layout;
 import com.example.gathering.json.PostTask;
 import com.example.gathering.json.RESTClient;
 import com.example.gathering.object.Adapter;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -68,24 +64,43 @@ public class Gallery extends Activity{
 	Uri fileUri = null;
 	ImageView photoImage = null;
 	
-	
-	
-	private void sendPhoto(File image) throws IOException {
-		HttpClient httpclient = new DefaultHttpClient();
-		HttpPost httppost = new HttpPost("http://api.gthrng.com/gathering/uploadMediaFile");
-		 
-		try {
-		  MultipartEntity entity = new MultipartEntity();
-		  entity.addPart("event_id", new StringBody("3d9111551d634871a64cb2d7307b3f7e"));
-		  entity.addPart("email", new StringBody("email@domain.com"));
-		  entity.addPart("key", new StringBody("969490e925ae635134d0977aa6e74f9e"));
-		  entity.addPart("file", new FileBody(image));
+	private static AsyncHttpClient client = new AsyncHttpClient();
 
-		  httppost.setEntity(entity);
-		  HttpResponse response = httpclient.execute(httppost);
-		} catch (Exception error) {
-			
-		}
+	private void sendPhoto(File image) {
+
+	    RequestParams params = new RequestParams();
+
+	    try 
+	    {
+	    	params.put("event_id", "3d9111551d634871a64cb2d7307b3f7e");
+			params.put("email", "email@domain.com");
+			params.put("key", "969490e925ae635134d0977aa6e74f9e");
+	    	params.put("file", image); 
+	    } 
+	    catch (FileNotFoundException e) {
+	    	Toast.makeText(gthis, e.getMessage(), 1000).show();
+	    }
+
+	    client.post("http://api.gthrng.com/gathering/uploadMediaFile", params,
+
+	        new AsyncHttpResponseHandler() {
+
+	            public void onSuccess(String result) {
+
+	            	Toast.makeText(gthis, "Image Sent", 1000).show();
+
+	            };
+
+	            public void onFailure(Throwable arg0, String errorMsg) {
+
+	            	Toast.makeText(gthis, errorMsg, 1000).show();
+
+	            };
+
+	        }
+
+	    );
+
 	}
 	
 	/* CAMERA **/
@@ -121,10 +136,7 @@ public class Gallery extends Activity{
 	private void showPhoto(Uri photoUri) throws IOException {
 	  File imageFile = new File(photoUri.getEncodedPath());
 	  if (imageFile.exists()){
-	     Toast.makeText(gthis, "Sending Image", 1000).show();
-	     //Poner aquí la ventana de uploading aquí!!!!!!
 	     this.sendPhoto(imageFile);
-	     Toast.makeText(gthis, "Image Sent", 1000).show();
 	  }       
 	}
 
