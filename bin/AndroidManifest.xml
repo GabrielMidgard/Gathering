@@ -28,32 +28,32 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.gathering.RegisterEvent"
+            android:name="com.example.gathering.newEvent.RegisterEvent"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.gathering.TermsService"
+            android:name="com.example.gathering.serviceEnded.ServiceEnded"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.gathering.Event"
+            android:name="com.example.gathering.eventList.Event"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.gathering.Register"
+            android:name="com.example.gathering.newUser.Register"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.gathering.Galery"
+            android:name="com.example.gathering.gallery.Gallery"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.gathering.splash"
+            android:name="com.example.gathering.SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>

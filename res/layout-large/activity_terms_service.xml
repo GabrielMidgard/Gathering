@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_black"
+        android:onClick="log_Out"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:background="@drawable/log_int"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="40dp"
+            android:text="Log in"
+            android:textColor="#451327"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingLeft="20dp"
+            android:text="Create your Gathering account"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="22dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="20dp"
+            android:paddingTop="15dp" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Terms of Use"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About the use of this application
+By using this site you agree to all the terms of this notice and responsible use policies. If you do not agree with anything in this notice you should not use this mobile application."
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="Warranties and Liability"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="While every effort is made ​​to ensure that the content of this website is accurate, the website is provided &apos;as is&apos; and programandoenandroid.com makes no representations or warranties regarding the accuracy or completeness of the information contained therein. While the content of this site is provided in good faith, does not guarantee that the information is up to date, be true and not misleading, or that this site will always (or ever) be available for use.
+
+We do not warrant that the servers that make this website available will be error, virus or bug free and you accept that it is your responsibility to take appropriate measures for protection against such threats. It is recommended to scan the files before downloading.
+
+Nothing in this website should be taken to constitute professional advice or a formal recommendation and we exclude all representations and warranties relating to the content and use of this site."
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

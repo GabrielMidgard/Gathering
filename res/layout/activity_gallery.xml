@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_black"
-        android:onClick="log_Out"
+        android:onClick="logOut"
         android:orientation="vertical" >
 
         <TextView
@@ -38,21 +38,23 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" >
 
         <Button
             android:id="@+id/btnIntendS"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:layout_marginTop="100dp"
-              android:layout_weight="0.91"
-              android:background="@drawable/btncam_unpressed"  />
+            android:layout_width="66dp"
+            android:layout_height="74dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/btncam_unpressed" />
 
         <ListView
             android:id="@+id/gallerylayout"
-            android:layout_width="240dp"
+            android:layout_width="wrap_content"
             android:layout_height="438dp"
-            android:layout_weight="0.11"
             android:dividerHeight="10dp" >
         </ListView>
 

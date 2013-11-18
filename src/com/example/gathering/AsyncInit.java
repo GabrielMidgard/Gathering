@@ -8,7 +8,7 @@ import android.os.SystemClock;
 public class AsyncInit extends AsyncTask<String, Integer, Boolean>{
 	//private ProgressDialog diaglog:
 	protected Context applicationContext;
-	public splash splashScreend;
+	public SplashScreen splashScreend;
 	//public PABS_SPLASH context=null;
 	String user="";
 	
@@ -39,6 +39,6 @@ public class AsyncInit extends AsyncTask<String, Integer, Boolean>{
 	 * onPostExecute*/
 	protected void onPostExecute(Boolean result)
 	{
-		splashScreend.iniciar_mainActivity();
+		splashScreend.iniciarMainActivity();
 	}
 }

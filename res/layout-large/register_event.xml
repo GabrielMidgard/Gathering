@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_black"
+        android:onClick="log_Out"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:background="@drawable/log_int"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="40dp"
+            android:text="Event"
+            android:textColor="#451327"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingLeft="14dp"
+            android:text="All events for Osvaldo Ros"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ScrollView
+                android:id="@+id/scrollView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <EditText
+                        android:id="@+id/txtEventName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:background="#EDE8EA"
+                        android:hint="Event Name"
+                        android:paddingLeft="30dp"
+                        android:textColorHint="#987D88"
+                        android:textSize="25sp" >
+
+                        <requestFocus />
+                    </EditText>
+
+                    <EditText
+                        android:id="@+id/txtStart"
+                        android:layout_width="fill_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="40dp"
+                        android:background="#EDE8EA"
+                        android:ems="10"
+                        android:focusableInTouchMode="false"
+                        android:hint="Start Date"
+                        android:inputType="date"
+                        android:paddingLeft="30dp"
+                        android:textColorHint="#987D88"
+                        android:textSize="25sp" />
+
+                    <EditText
+                        android:id="@+id/txtEnd"
+                        android:layout_width="fill_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:background="#EDE8EA"
+                        android:ems="10"
+                        android:focusableInTouchMode="false"
+                        android:hint="End Date"
+                        android:paddingLeft="30dp"
+                        android:textColorHint="#987D88"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingTop="9dp"
+                        android:text="You event can be a maximum of 7 days long."
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="19dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="right" >
+
+                        <TextView
+                            android:id="@+id/TextView02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginTop="12dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="9dp"
+                            android:text="Add a event"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="86dp"
+                            android:layout_height="74dp"
+                            android:layout_marginRight="10dp"
+                            android:onClick="accept"
+                            android:src="@drawable/btn_unpressed" />
+
+                        <TextView
+                            android:id="@+id/TextView01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="7dp"
+                            android:layout_marginTop="12dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="9dp"
+                            android:text="Add a guest"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/imageButton1"
+                            android:layout_width="86dp"
+                            android:layout_height="74dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@null"
+                            android:onClick="validateRegistration"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/button_add" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/linearGuest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

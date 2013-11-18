@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="right"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_black"
+        android:onClick="logOut"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:background="@drawable/log_int"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="40dp"
+            android:text="Event"
+            android:textColor="#451327"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingLeft="14dp"
+            android:text="All events for Osvaldo Ros"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" >
+
+        <Button
+            android:id="@+id/btnIntendS"
+            android:layout_width="96dp"
+            android:layout_height="84dp"
+            android:layout_marginTop="350dp"
+            android:background="@drawable/btncam_unpressed" />
+
+        <ListView
+            android:id="@+id/gallerylayout"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.11"
+            android:dividerHeight="10dp"
+            android:paddingTop="30dp" >
+
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

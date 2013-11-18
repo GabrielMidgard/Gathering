@@ -9,19 +9,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_black"
-        android:onClick="log_Out"
+        android:onClick="logOut"
         android:orientation="vertical" >
 
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="51dp"
             android:background="@drawable/log_int"
             android:gravity="center_vertical"
-            android:onClick="log_Out"
             android:paddingBottom="3dp"
-            android:paddingLeft="14dp"
-            android:text="Log out"
+            android:paddingLeft="25dp"
+            android:text="Log in"
             android:textColor="#451327"
             android:textSize="18sp" />
 
@@ -31,7 +30,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="2dp"
             android:paddingLeft="14dp"
-            android:text="All events for Osvaldo Ros"
+            android:text="Create your Gathering account"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="#FFFFFF" />
     </LinearLayout>
