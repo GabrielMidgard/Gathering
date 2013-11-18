@@ -8,6 +8,7 @@ import com.example.gathering.R;
 import com.example.gathering.R.id;
 import com.example.gathering.R.layout;
 import com.example.gathering.gallery.Gallery;
+import com.example.gathering.utils.DataEvent;
 
 import android.content.Context;
 import android.content.Intent;
@@ -48,6 +49,9 @@ public class Adapter extends BaseAdapter{
 	@Override
 	public View getView(int arg0, View arg1, ViewGroup arg2) {
 		View view = new View (context);
+		
+		final DataEvent dEvent= DataEvent.getInstance(); 
+		
 		LayoutInflater inflater = LayoutInflater.from(context);
 		view = inflater.inflate(R.layout.element_list, null);
 			try {
@@ -65,6 +69,8 @@ public class Adapter extends BaseAdapter{
 						try {
 							intent.putExtra(EXTRA_MESSANGE,json.getString("id"));
 							intent.putExtra("EXTRA_MESSANGE_NAME",json.getString("name"));
+							
+							dEvent.setCurrentEventId(json.getString("id"));
 						} catch (JSONException e) {
 							e.printStackTrace();
 						}
