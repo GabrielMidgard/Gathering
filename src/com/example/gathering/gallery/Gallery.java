@@ -78,14 +78,9 @@ public class Gallery extends Activity{
 	    RequestParams params = new RequestParams();
 
 	    try 
-	    {	    	
-	    	//3d9111551d634871a64cb2d7307b3f7e
-	    	@SuppressWarnings("unused")
-			String a = dEvent.getCurrentEventId();
-	    	String b = dEvent.getUser().getEmail();
-	    	String c = dEvent.getCurrentEventKey();
+	    {
 	    	params.put("event_id", dEvent.getCurrentEventId());
-			params.put("email", dEvent.getCurrentEventEmail());
+			params.put("email", dEvent.getUser().getEmail());
 			params.put("key", dEvent.getCurrentEventKey());
 	    	params.put("file", image); 
 	    } 
