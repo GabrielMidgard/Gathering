@@ -1,12 +1,17 @@
 package com.example.gathering.utils;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.example.gathering.object.UsersObject;
 
 public class DataEvent {
 	private static DataEvent event= new DataEvent();
 	private String currentEventId;
 	private String currentEventEmail;
 	private String currentEventKey;
+	private UsersObject user;
 	
 	private JSONArray eventArray = null;
 	
@@ -37,31 +42,29 @@ public class DataEvent {
 		return currentEventId;
 	}
 
-	public void setCurrentEventId(String currentEventId) {
-		
-		/* declara un objeto
-		 * para cada elemento de eventArray resisar si el eventArrey[i]
-		 * es igual a currenteEventId
-		 * 
-		 * para cada elemento de eventArray revisar si el id del eventArray
-		 * es igual a currentEventId
-		 * si es asi el objeto que declare igualalo a eventArray[i]
-		 * 
-		 * una vez obtenido event.setNameObjeto.name
-		 * 
-		 *  lo mismo para email*/
+	public void setCurrentEventId(String currentEventId) throws JSONException {
 		this.currentEventId = currentEventId;
+		JSONObject jsonEvent = null;
 		
 		for(int i=0; i<eventArray.length(); i++){
-			/*if(event.currentEventId==  eventArray[i]){
-				
-			}*/
+			jsonEvent = eventArray.getJSONObject(i);
+			if(currentEventId == jsonEvent.getString("id")){
+				break;
+			}
 		}
-		
+		getInstance().setCurrentEventKey("969490e925ae635134d0977aa6e74f9e");
 	}
 
-	public void setArrayEvents(JSONArray eventArray) {
+	public void setEventArray(JSONArray eventArray) {
 		this.eventArray = eventArray;
+	}
+
+	public UsersObject getUser() {
+		return user;
+	}
+
+	public void setUser(UsersObject user) {
+		this.user = user;
 	}
 	
 	

@@ -47,11 +47,18 @@ public class Event extends Activity{
 
     static JSONArray array_events = null;
     
+    private static DataEvent dEvent = null;
+    
  // Hashmap for ListView
     ArrayList<HashMap<String, String>> contactList = new ArrayList<HashMap<String, String>>();
     
+    public Event()
+    {
+    	dEvent = DataEvent.getInstance();
+    }
+    
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_events);
 		ethis = this;
@@ -60,7 +67,7 @@ public class Event extends Activity{
 		
 		user.setEmail(intent.getStringExtra("EXTRA_MESSANGE_EMAIL"));
 		user.setName(intent.getStringExtra("EXTRA_MESSANGE_NAME"));
-		
+		dEvent.setUser(user);
 		
 	    TextView t=new TextView(this); 
 		t=(TextView)findViewById(R.id.textView2); 
@@ -132,14 +139,13 @@ public class Event extends Activity{
 	 * Read the answer which gives the server after it has received the json*/
 	public static void receiveJson(JSONArray json)
 	{
-		DataEvent dEvent= DataEvent.getInstance(); 
 		try {
 			Log.i("s",json.toString());
 			com.example.gathering.object.Adapter adapter = new Adapter(json,ethis);
 			ListView list = (ListView)ethis.findViewById(R.id.listView1);
 			list.setAdapter(adapter);
-			
-			dEvent.setArrayEvents(json);
+			//Save the Events list to future process
+			dEvent.setEventArray(json);
 			
 /*			array_events = json.getJSONArray("listEvents");
 			for(int i = 0; i < array_events.length(); i++)

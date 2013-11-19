@@ -69,8 +69,9 @@ public class Adapter extends BaseAdapter{
 						try {
 							intent.putExtra(EXTRA_MESSANGE,json.getString("id"));
 							intent.putExtra("EXTRA_MESSANGE_NAME",json.getString("name"));
-							
-							dEvent.setCurrentEventId(json.getString("id"));
+							//Stablishing the current Event Id
+							String id =  json.getString("id");
+							dEvent.setCurrentEventId(id);
 						} catch (JSONException e) {
 							e.printStackTrace();
 						}

@@ -28,6 +28,7 @@ import com.example.gathering.R.layout;
 import com.example.gathering.json.PostTask;
 import com.example.gathering.json.RESTClient;
 import com.example.gathering.object.Adapter;
+import com.example.gathering.utils.DataEvent;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -65,16 +66,27 @@ public class Gallery extends Activity{
 	ImageView photoImage = null;
 	
 	private static AsyncHttpClient client = new AsyncHttpClient();
+	private DataEvent dEvent = null;
+	
+	public Gallery()
+	{
+		dEvent = DataEvent.getInstance();
+	}
 
 	private void sendPhoto(File image) {
 
 	    RequestParams params = new RequestParams();
 
 	    try 
-	    {
-	    	params.put("event_id", "3d9111551d634871a64cb2d7307b3f7e");
-			params.put("email", "email@domain.com");
-			params.put("key", "969490e925ae635134d0977aa6e74f9e");
+	    {	    	
+	    	//3d9111551d634871a64cb2d7307b3f7e
+	    	@SuppressWarnings("unused")
+			String a = dEvent.getCurrentEventId();
+	    	String b = dEvent.getUser().getEmail();
+	    	String c = dEvent.getCurrentEventKey();
+	    	params.put("event_id", dEvent.getCurrentEventId());
+			params.put("email", dEvent.getCurrentEventEmail());
+			params.put("key", dEvent.getCurrentEventKey());
 	    	params.put("file", image); 
 	    } 
 	    catch (FileNotFoundException e) {
@@ -86,15 +98,11 @@ public class Gallery extends Activity{
 	        new AsyncHttpResponseHandler() {
 
 	            public void onSuccess(String result) {
-
 	            	Toast.makeText(gthis, "Image Sent", 1000).show();
-
 	            };
 
 	            public void onFailure(Throwable arg0, String errorMsg) {
-
 	            	Toast.makeText(gthis, errorMsg, 1000).show();
-
 	            };
 
 	        }
