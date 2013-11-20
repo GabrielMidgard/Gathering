@@ -16,12 +16,15 @@ import com.example.gathering.json.RESTClient;
 import com.example.gathering.object.Functions;
 import com.example.gathering.serviceEnded.ServiceEnded;
 
+import android.R.color;
 import android.R.style;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -91,7 +94,7 @@ public class RegisterEvent extends Activity {
                                                 dayStar += datePicker.getDayOfMonth();
                                                 monthStar += ( datePicker.getMonth() + 1 );
                                                 yearStar += datePicker.getYear();
-                                                txtStart.setText( dayStar.substring( dayStar.length() - 2)+"-"+  monthStar.substring( monthStar.length() - 2) + "-"+yearStar);
+                                                txtStart.setText(monthStar.substring( monthStar.length() - 2)+"/"+  dayStar.substring( dayStar.length() - 2)  + "/"+yearStar);
                                                 dialog.cancel();
                                         }
                                 });
@@ -125,7 +128,7 @@ public class RegisterEvent extends Activity {
                                                 monthEnd += ( datePicker.getMonth() + 1 );
                                                 yearEnd += datePicker.getYear();
                                         
-                                                txtEnd.setText( dayEnd.substring( dayEnd.length() - 2)+"-"+  monthEnd.substring( monthEnd.length() - 2) + "-"+yearEnd);
+                                                txtEnd.setText(  monthEnd.substring( monthEnd.length() - 2)+"/"+dayEnd.substring( dayEnd.length() - 2)  + "/"+yearEnd);
                                                 dialog.cancel();
                                         }
                                 });
@@ -157,16 +160,24 @@ public class RegisterEvent extends Activity {
             });
             final Button button2 = (Button)dialog.findViewById(R.id.button2);
             final EditText email = (EditText)dialog.findViewById(R.id.editText1);
+            final EditText name = (EditText)dialog.findViewById(R.id.editText2);
             button2.setOnClickListener(new OnClickListener(){
 
                         @Override
                         public void onClick(View v) {
                                 String user = email.getText().toString();
+                                String username = name.getText().toString();
                                 if (user.length()!=0){
                                         TextView tx = new TextView(getApplicationContext());
                                         tx.setText(user);
                                         tx.setTextSize(20);
+                                        tx.setTextColor(Color.LTGRAY);
                                         correos.add(user);
+                                        TextView txn = new TextView (getApplicationContext());
+                                        txn.setText(username);
+                                        txn.setTextSize(40);
+                                        txn.setTextColor(Color.RED);
+                                        linear.addView(txn);
                                         linear.addView(tx);
                                 }
                                 dialog.dismiss();
@@ -250,8 +261,8 @@ public class RegisterEvent extends Activity {
         
         public void saveEvent(){
                 Toast.makeText(this, "The event has been added", 3000).show();
-                /*Posttask post = new Posttask(5, null);
-                post.execute();*/
+                PostTask post = new PostTask(5, null);
+                post.execute();
         }
         
         public static RESTClient postEvent(){

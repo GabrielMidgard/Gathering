@@ -51,7 +51,8 @@
             android:layout_marginTop="13dp"
             android:text="Now"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#982317" />
+            android:textColor="#982317"
+            android:visibility="invisible" />
 
     </LinearLayout>
 

@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_black"
-        android:onClick="log_Out"
+        android:onClick="logOut"
         android:orientation="vertical" >
 
         <TextView
@@ -17,12 +17,13 @@
             android:layout_height="87dp"
             android:background="@drawable/log_int"
             android:gravity="center_vertical"
+            android:onClick="logOut"
             android:paddingBottom="10dp"
             android:paddingLeft="40dp"
             android:text="Event"
             android:textColor="#451327"
             android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"  />
 
         <TextView
             android:id="@+id/textView2"
@@ -63,14 +64,15 @@
                         android:layout_height="60dp"
                         android:layout_marginTop="20dp"
                         android:background="#EDE8EA"
+                        android:ems="10"
                         android:hint="Event Name"
                         android:paddingLeft="30dp"
-                        android:textColorHint="#987D88"
-                        android:textSize="25sp" >
-
+                        android:textColorHint="#987D88" 
+						android:textSize="25sp">
+						
                         <requestFocus />
                     </EditText>
-
+					
                     <EditText
                         android:id="@+id/txtStart"
                         android:layout_width="fill_parent"
@@ -82,8 +84,8 @@
                         android:hint="Start Date"
                         android:inputType="date"
                         android:paddingLeft="30dp"
-                        android:textColorHint="#987D88"
-                        android:textSize="25sp" />
+                        android:textColorHint="#987D88" 
+                        android:textSize="25sp"/>
 
                     <EditText
                         android:id="@+id/txtEnd"
@@ -95,8 +97,8 @@
                         android:focusableInTouchMode="false"
                         android:hint="End Date"
                         android:paddingLeft="30dp"
-                        android:textColorHint="#987D88"
-                        android:textSize="25sp" />
+                        android:textColorHint="#987D88" 
+                        android:textSize="25sp"/>
 
                     <TextView
                         android:id="@+id/textView3"
@@ -122,17 +124,17 @@
                         android:layout_marginTop="15dp"
                         android:gravity="right" >
 
-                        <TextView
-                            android:id="@+id/TextView02"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="7dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingLeft="10dp"
-                            android:paddingTop="9dp"
-                            android:text="Add a event"
-                            android:textSize="20sp" />
-
+	                    <TextView
+	                        android:id="@+id/TextView02"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:layout_marginRight="7dp"
+	                        android:layout_marginTop="12dp"
+	                        android:paddingLeft="10dp"
+	                        android:paddingTop="9dp"
+	                        android:text="Add a event"
+	                        android:textSize="20sp" />
+                    
                         <ImageView
                             android:id="@+id/imageView2"
                             android:layout_width="86dp"
@@ -161,7 +163,7 @@
                             android:onClick="validateRegistration"
                             android:scaleType="fitXY"
                             android:src="@drawable/button_add" />
-
+                        
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>

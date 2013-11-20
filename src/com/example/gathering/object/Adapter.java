@@ -1,5 +1,9 @@
 package com.example.gathering.object;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,6 +16,8 @@ import com.example.gathering.utils.DataEvent;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,12 +54,39 @@ public class Adapter extends BaseAdapter{
 
 	@Override
 	public View getView(int arg0, View arg1, ViewGroup arg2) {
+		boolean picturable = false;
 		View view = new View (context);
 		
 		final DataEvent dEvent= DataEvent.getInstance(); 
 		
 		LayoutInflater inflater = LayoutInflater.from(context);
 		view = inflater.inflate(R.layout.element_list, null);
+			
+			try{
+				final JSONObject json;
+				json = jsonarray.getJSONObject(arg0);
+				String date = json.getString("when");
+				TextView txdate = (TextView)view.findViewById(R.id.textViewTime);
+				txdate.setText(date);
+				SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+				Date eventDate = dateFormat.parse(date);
+				Date actual  = new Date();
+				Log.i(date+ " "+ eventDate.toLocaleString(), actual.toLocaleString());
+				if (eventDate.getDay() == actual.getDay() &&
+						eventDate.getMonth() == actual.getMonth() &&
+						eventDate.getYear() == actual.getYear()){
+					Log.i("date","in");
+					TextView text = (TextView)view.findViewById(R.id.labelNow);
+					text.setVisibility(View.VISIBLE);
+					picturable = true;
+				}
+			}catch(JSONException e){
+				TextView txdate = (TextView)view.findViewById(R.id.textViewTime);
+				txdate.setText("No value");
+				e.printStackTrace();
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
 			try {
 				final JSONObject json;
 
@@ -61,6 +94,7 @@ public class Adapter extends BaseAdapter{
 				String name = json.getString("name");
 				TextView txname = (TextView)view.findViewById(R.id.textViewEvent);
 				txname.setText(name);
+				final boolean ispicturable = picturable;
 				view.setOnClickListener(new OnClickListener(){
 
 					@Override
@@ -69,9 +103,8 @@ public class Adapter extends BaseAdapter{
 						try {
 							intent.putExtra(EXTRA_MESSANGE,json.getString("id"));
 							intent.putExtra("EXTRA_MESSANGE_NAME",json.getString("name"));
-							//Stablishing the current Event Id
-							String id =  json.getString("id");
-							dEvent.setCurrentEventId(id);
+							intent.putExtra("picturable", ispicturable);
+							dEvent.setCurrentEventId(json.getString("id"));
 						} catch (JSONException e) {
 							e.printStackTrace();
 						}
@@ -87,18 +120,7 @@ public class Adapter extends BaseAdapter{
 				txname.setText("No value");
 				e.printStackTrace();
 			}
-			try{
-				final JSONObject json;
-				json = jsonarray.getJSONObject(arg0);
-				String date = json.getString("when");
-				TextView txdate = (TextView)view.findViewById(R.id.textViewTime);
-				txdate.setText(date);
-			}catch(JSONException e){
-				TextView txdate = (TextView)view.findViewById(R.id.textViewTime);
-				txdate.setText("No value");
-				e.printStackTrace();
-			}
 					return view;
 	}
 	
-}
+}	

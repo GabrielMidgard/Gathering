@@ -58,7 +58,6 @@ public class Gallery extends Activity{
 	private ImageView mImageView;
 	private Bitmap mImageBitmap;
 
-	
 		
 	private static final String TAG = "CallCamera";
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQ = 0;
@@ -187,6 +186,7 @@ public class Gallery extends Activity{
 		Intent intent = getIntent();
 		id = intent.getExtras().getString(Adapter.EXTRA_MESSANGE);
 		name_Event=intent.getExtras().getString("EXTRA_MESSANGE_NAME");
+		boolean picturable = intent.getExtras().getBoolean("picturable");
 		
 		setContentView(R.layout.activity_gallery);
 		
@@ -205,6 +205,9 @@ public class Gallery extends Activity{
 		mImageBitmap = null;
 
 		Button picSBtn = (Button) findViewById(R.id.btnIntendS);
+		if (!picturable){
+			picSBtn.setVisibility(View.INVISIBLE);
+		}
 		setBtnListenerOrDisable( 
 				picSBtn, 
 				mTakePicSOnClickListener,

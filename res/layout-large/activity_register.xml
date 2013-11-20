@@ -29,11 +29,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="2dp"
-            android:paddingLeft="14dp"
+            android:paddingLeft="20dp"
             android:text="Create your Gathering account"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textColor="#FFFFFF" 
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
@@ -50,86 +50,78 @@
             <EditText
                 android:id="@+id/txtCode"
                 android:layout_width="fill_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="#EDE8EA"
                 android:ems="10"
                 android:hint="Gathiring Invitation Code"
                 android:paddingLeft="30dp"
-                android:textColorHint="#987D88"
-                android:textSize="25sp" >
+                android:textColorHint="#987D88" >
 
                 <requestFocus />
             </EditText>
 
             <TextView
                 android:id="@+id/TextView01"
-                android:layout_width="450dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.15"
                 android:paddingLeft="30dp"
                 android:paddingTop="9dp"
-                android:text="Enter the code that was included in your invitation email (if you received one)."
-                android:textSize="17sp" />
+                android:text="Enter the code that was included in your invitation email (if you received one)." />
 
             <EditText
                 android:id="@+id/txtName"
                 android:layout_width="fill_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="#EDE8EA"
                 android:ems="10"
                 android:hint="Your full name"
                 android:paddingLeft="30dp"
-                android:textColorHint="#987D88"
-                android:textSize="25sp" />
+                android:textColorHint="#987D88" />
 
             <EditText
                 android:id="@+id/txtEmail"
                 android:layout_width="fill_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="#EDE8EA"
                 android:ems="10"
                 android:hint="Email Address"
                 android:paddingLeft="30dp"
-                android:textColorHint="#987D88"
-                android:textSize="25sp" />
+                android:textColorHint="#987D88" />
 
             <TextView
                 android:id="@+id/TextView02"
-                android:layout_width="441dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingTop="9dp"
-                android:text="Your email address and name were provided by you event organizer. Freel free to edit them here."
-                android:textSize="17sp" />
+                android:text="Your email address and name were provided by you event organizer. Freel free to edit them here." />
 
             <EditText
                 android:id="@+id/txtPassword1"
                 android:layout_width="fill_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="#EDE8EA"
                 android:ems="10"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:paddingLeft="30dp"
-                android:textColorHint="#987D88"
-                android:textSize="25sp" />
+                android:textColorHint="#987D88" />
 
             <EditText
                 android:id="@+id/txtPassword2"
                 android:layout_width="fill_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="#EDE8EA"
                 android:ems="10"
                 android:hint="Password(again)"
                 android:inputType="textPassword"
                 android:paddingLeft="30dp"
-                android:textColorHint="#987D88"
-                android:textSize="25sp" />
+                android:textColorHint="#987D88" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -159,8 +151,7 @@
                         android:paddingTop="7dp"
                         android:text="I have read and agree to the"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="#898989"
-                        android:textSize="15sp" />
+                        android:textColor="#898989" />
 
                     <TextView
                         android:id="@+id/textView5"
@@ -170,8 +161,7 @@
                         android:onClick="validateRegistration"
                         android:paddingLeft="10dp"
                         android:text="Gathering Terms of Service."
-                        android:textColor="#94180D"
-                        android:textSize="15sp" />
+                        android:textColor="#94180D" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -179,7 +169,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
                 android:gravity="right"
                 android:paddingBottom="20dp"
                 android:paddingRight="25dp"
@@ -193,19 +182,19 @@
                     android:paddingRight="15dp"
                     android:paddingTop="5dp"
                     android:text="Submit"
-                    android:textColor="#613748"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textColor="#613748" />
 
                 <ImageButton
                     android:id="@+id/imageButton1"
-                    android:layout_width="86dp"
-                    android:layout_height="74dp"
+                    android:layout_width="66dp"
+                    android:layout_height="54dp"
                     android:background="@null"
                     android:onClick="validateRegistration"
                     android:scaleType="fitXY"
                     android:src="@drawable/btn_unpressed" />
+
             </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>
