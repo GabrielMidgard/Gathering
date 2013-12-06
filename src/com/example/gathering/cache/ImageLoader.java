@@ -109,8 +109,8 @@ public class ImageLoader {
             while(true){
                 if(widthTmp/2<REQUIRED_SIZE || heightTmp/2<REQUIRED_SIZE)
                     break;
-                widthTmp/=2;
-                heightTmp/=2;
+                widthTmp/=4;
+                heightTmp/=1;
                 scale*=2;
             }
             

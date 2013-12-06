@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_black"
+        android:background="@drawable/background_black2"
         android:onClick="logOut"
         android:orientation="vertical" >
 
@@ -55,8 +55,6 @@
                 android:hint="Gathiring Invitation Code"
                 android:paddingLeft="30dp"
                 android:textColorHint="#987D88" >
-
-                <requestFocus />
             </EditText>
 
             <TextView
@@ -86,6 +84,7 @@
                 android:background="#EDE8EA"
                 android:ems="10"
                 android:hint="Email Address"
+                android:inputType="textEmailAddress"
                 android:paddingLeft="30dp"
                 android:textColorHint="#987D88" />
 

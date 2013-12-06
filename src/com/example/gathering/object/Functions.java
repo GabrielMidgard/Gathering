@@ -36,7 +36,13 @@ public class Functions {
 
 	public String validName(String name)
 	{
-		name = name.replace(' ', '_');
+		name = name.replace(' ', '%');
+		return name;
+	}
+	
+	public String validName2(String name)
+	{
+		name = name.replace('_', ' ');
 		return name;
 	}
 }

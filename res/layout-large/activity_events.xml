@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_black"
+            android:background="@drawable/background_black2"
             android:onClick="logOut"
             android:orientation="vertical" >
 
@@ -40,13 +40,13 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
-
         </LinearLayout>
 
         <ListView
             android:id="@+id/listView1"
             android:layout_width="match_parent"
-            android:layout_height="472dp" >
+            android:layout_height="452dp"
+            android:layout_weight="0.79" >
         </ListView>
 
         <ImageView
@@ -56,10 +56,10 @@
             android:layout_gravity="right"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@null"
             android:scaleType="fitXY"
             android:src="@drawable/button_add" />
-
     </LinearLayout>
 
 </LinearLayout>

@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_black"
+        android:background="@drawable/background_black2"
         android:onClick="logOut"
         android:orientation="vertical" >
 
@@ -43,7 +43,8 @@
         <ListView
             android:id="@+id/listView1"
             android:layout_width="match_parent"
-            android:layout_height="255dp" >
+            android:layout_height="255dp"
+            android:layout_weight="0.93" >
         </ListView>
 
         <ImageView
@@ -55,7 +56,6 @@
             android:background="@null"
             android:scaleType="fitXY"
             android:src="@drawable/button_add" />
-
     </LinearLayout>
 
 </LinearLayout>

@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_black"
+        android:background="@drawable/background_black2"
         android:onClick="logOut"
         android:orientation="vertical" >
 
@@ -43,12 +43,19 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp" >
 
-        <Button
-            android:id="@+id/btnIntendS"
-            android:layout_width="96dp"
-            android:layout_height="84dp"
-            android:layout_marginTop="350dp"
-            android:background="@drawable/btncam_unpressed" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btnIntendS"
+                android:layout_width="96dp"
+                android:layout_height="84dp"
+                android:layout_marginTop="350dp"
+                android:background="@drawable/btncam_unpressed" />
+
+        </LinearLayout>
 
         <ListView
             android:id="@+id/gallerylayout"
@@ -57,7 +64,9 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="0.11"
             android:dividerHeight="10dp"
-            android:paddingTop="30dp" >
+            android:paddingTop="30dp" 
+            android:paddingBottom="30dp">
+<!--             android:background="@drawable/background_layout"> -->
 
         </ListView>
 

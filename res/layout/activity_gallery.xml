@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_black"
+        android:background="@drawable/background_black2"
         android:onClick="logOut"
         android:orientation="vertical" >
 
@@ -55,6 +55,7 @@
             android:id="@+id/gallerylayout"
             android:layout_width="wrap_content"
             android:layout_height="438dp"
+            android:background="@drawable/background_layout"
             android:dividerHeight="10dp" >
         </ListView>
 

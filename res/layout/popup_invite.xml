@@ -12,7 +12,7 @@
         android:text="Type the name and the email of someone you want to invite" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/popTxtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -20,7 +20,7 @@
         android:inputType="textPersonName" />
 <requestFocus />
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/popTxtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -36,22 +36,22 @@
         android:gravity="center" >
 
         <Button
-            android:id="@+id/button1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:text="Cancel" />
-
-        <Button
-            android:id="@+id/button2"
+            android:id="@+id/popBtnOk"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:text="Ok" />
+
+        <Button
+            android:id="@+id/popBtnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="Cancel" />
 
     </LinearLayout>
 

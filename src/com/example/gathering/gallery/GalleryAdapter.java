@@ -58,6 +58,7 @@ class GalleryAdapter extends BaseAdapter{
 	public View getView(int arg0, View arg1, ViewGroup arg2) {
 		LayoutInflater inflater = LayoutInflater.from(context);
 		View view = inflater.inflate(R.layout.element_gallery, null);
+		view.setBackgroundResource( R.drawable.background_layout );
 		Log.i("Download","picture "+arg0);
 		ImageView img = (ImageView)view.findViewById(R.id.imageView1);
 		img.setImageBitmap(imgs[arg0]);
@@ -70,9 +71,5 @@ class GalleryAdapter extends BaseAdapter{
 		//img.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
 		return view;
 	}
-	
 	Bitmap bmImg;
-	
-
-	
 }

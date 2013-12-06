@@ -17,6 +17,7 @@ import com.example.gathering.json.RESTClient;
 import com.example.gathering.newEvent.RegisterEvent;
 import com.example.gathering.object.Adapter;
 import com.example.gathering.object.EventObject;
+import com.example.gathering.object.Functions;
 import com.example.gathering.object.UsersObject;
 import com.example.gathering.utils.DataEvent;
 
@@ -40,7 +41,7 @@ public class Event extends Activity{
 	static UsersObject user = new UsersObject();
 	static EventObject event = new EventObject();
 	
-	
+	Functions function = new Functions();
 	private static final String TAG_json_NAME = "name";
     private static final String TAG_json_EVENTWHEN = "eventWhen";
 	
@@ -67,15 +68,23 @@ public class Event extends Activity{
 		
 		user.setEmail(intent.getStringExtra("EXTRA_MESSANGE_EMAIL"));
 		user.setName(intent.getStringExtra("EXTRA_MESSANGE_NAME"));
+		
+		user.setName(function.validName2(user.getName()));
+		
 		dEvent.setUser(user);
 		
+		/** Gets activiy label ('All events for')
+		 * and we add the name of the user who entered**/
 	    TextView t=new TextView(this); 
 		t=(TextView)findViewById(R.id.textView2); 
 
 		String sText = "All events for "+user.getName();
 		t.setText(sText);
-		   
+		
+		/** load all event **/
 		loadEvents(user);
+		
+		/** Gets the image that was used for the button * and adds the visual effect that is being pressed **/
 		final ImageView image = (ImageView) findViewById(R.id.btnAdd);
 		image.setOnTouchListener(new OnTouchListener(){
 
@@ -95,7 +104,15 @@ public class Event extends Activity{
 			
 		});
 	}
+	
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		loadEvents(user);
+	}
+	
 	public void logOut(View v)
 	{
 		/*Intent intent = new Intent(this, MainActivity.class);
@@ -115,13 +132,14 @@ public class Event extends Activity{
 	{
 		Intent intent = new Intent(this, RegisterEvent.class);
 		intent.putExtra("email", user.getEmail());
+		intent.putExtra("userName", user.getName());
 		startActivity(intent);
 
 		
 		//this.finish();
 	}
 	
-	/*loadEvents
+	/**loadEvents
 	 * the class  Postask parameters
 	 * where the process will be split to send the json with the parameters listed
 	 * and validate it to run properly

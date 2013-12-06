@@ -108,6 +108,7 @@ public class Gallery extends Activity{
 	/* CAMERA **/
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		//Contador de que guardo
 		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQ) {
 		    if (resultCode == RESULT_OK) {
 		      Uri photoUri = null;
@@ -214,11 +215,16 @@ public class Gallery extends Activity{
 				MediaStore.ACTION_IMAGE_CAPTURE
 		);
 	}
-		
-	public void logOut(View v)
-	{
-		/*Intent intent = new Intent(this, Event.class);
-		startActivity(intent);*/
+	
+	@Override
+	protected void onResume(){
+		// TODO Auto-generated method stub
+		super.onResume();
+		PostTask task = new PostTask(4, null);
+		task.execute();
+	}
+	
+	public void logOut(View v){
 		this.finish();
 	}
 	public static RESTClient getPics()

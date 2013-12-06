@@ -182,6 +182,7 @@ public class MainActivity extends Activity {
 	 */
 	public void showRegistration(View v) {
 		Intent intent = new Intent(mthis, Register.class);
+		
 		startActivity(intent);
 		// this.finish();
 	}
@@ -200,6 +201,9 @@ public class MainActivity extends Activity {
 		// intent.putExtra("EXTRA_MESSANGE_EMAIL",user.getEmail());
 		intent.putExtra("EXTRA_MESSANGE_EMAIL", user.getEmail());
 		intent.putExtra("EXTRA_MESSANGE_NAME", user.getName());
+		EditText editTextPassword = (EditText) mthis
+				.findViewById(R.id.txtPassword);
+		editTextPassword.setText("");
 		mthis.startActivity(intent);
 	}
 
